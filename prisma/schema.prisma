@@ -11,9 +11,10 @@ generator client {
   previewFeatures = ["mongodb"]
 }
 
-model Post {
-  id    String @id @default(dbgenerated()) @map("_id") @db.ObjectId
-  slug  String @unique
-  title String
-  body  String
+model Recipe {
+  id      String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  cuisine String
+  name    String
+  rating  Int
+  cook    String
 }

@@ -4,9 +4,9 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient({ log: ["query"] });
 
 app.get("/", async (req, res) => {
-    const posts = await prisma.post.findMany({});
+    const recipes = await prisma.recipe.findMany({});
 
-    res.send(posts);
+    res.send(recipes);
 });
 
 app.listen(8000, () => console.log(`Server running on port 8000`));
